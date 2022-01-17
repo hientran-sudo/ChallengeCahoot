@@ -3,6 +3,12 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Search</h1>
+    <p>
+        @using (Html.BeginForm("Index","HomeController",FormMethod.Get))
+        {
+            @Html.TextBox("search") <input type="submit" value="Search" />
+            <h3>Total posts: @ViewData["TotalData"]</h3>
+        }
+    </p>
 </div>
